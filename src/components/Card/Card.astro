@@ -1,0 +1,29 @@
+---
+import CardContent from "./CardContent.astro";
+
+interface Props {
+  title?: string;
+  body?: string;
+  href?: string;
+}
+
+const { title, body, href } = Astro.props;
+---
+
+<article
+  class={`overflow-hidden bg-darkslate-500 rounded-lg p-6 border border-darkslate-100 hover:border-primary-700 hover:-translate-y-2 align-start flex-none justify-start relative transform perspective-1200 w-full transition-all duration-300 ease-in-out col-span-1 h-auto ${href && "cursor-pointer"}`}
+>
+  {
+    href ? (
+      <a href={href} class="h-full w-full">
+        <CardContent title={title} body={body}>
+          <slot />
+        </CardContent>
+      </a>
+    ) : (
+      <CardContent title={title} body={body}>
+        <slot />
+      </CardContent>
+    )
+  }
+</article>
