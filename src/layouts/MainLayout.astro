@@ -42,11 +42,7 @@ const {
   
     <title>{title}</title>
   </head>
-  <body
-    class="bg-darkslate-700 md:h-screen flex flex-col justify-center items-center"
-  >
-    <!-- TODO: Add loader -->
-    <!-- <slot name="loader" /> -->
+  <body class="mx-auto flex flex-col gap-9 bg-darkslate-700 px-10 py-8 md:gap-20 md:py-16 text-sm text-white min-h-screen max-w-[872px]">
     <slot />
   </body>
 </html>
@@ -54,6 +50,18 @@ const {
 <style is:global>
   body {
     font-family: 'Satoshi', sans-serif;
-    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+  }
+
+  p {
+    font-family: 'Satoshi', sans-serif;
   }
 </style>
