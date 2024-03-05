@@ -10,6 +10,6 @@ export const siteConfig: SiteConfig = {
   title: 'Miguel Daipré',
   description: 'I am a Senior React Native Developer and OSS Contributor',
   language: 'en',
-  imageOg: 'og.jpg',
+  imageOg: '/og.jpg',
   author: 'Miguel Daipré',
 }
