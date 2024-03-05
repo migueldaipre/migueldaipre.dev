@@ -1,7 +1,12 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro'
+import Intro from '@components/Intro/Intro.astro'
+import Header from '@components/Header/Header.astro'
 ---
 
 <MainLayout>
-  <h1 class='text-3xl text-primary-500'>Miguel Daipré</h1>
+  <Header />
+  <main>
+    <Intro />
+  </main>
 </MainLayout>
