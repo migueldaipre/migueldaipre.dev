@@ -12,5 +12,7 @@ export default defineConfig({
     mdx(),
   ],
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    imageService: true,
+  }),
 });
