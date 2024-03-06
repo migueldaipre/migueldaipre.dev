@@ -1,67 +1,9 @@
 ---
-import { siteConfig } from '@config/site'
-
-interface Props {
-  title?: string;
-  description?: string;
-  language?: string;
-  image?: string;
-}
-
-const { 
-  title = siteConfig.title,
-  description = siteConfig.description,
-  language = siteConfig.language,
-  image = siteConfig.imageOg
-} = Astro.props
+import BaseLayout from './BaseLayout.astro'
+import Header from '@components/Header/Header.astro'
 ---
 
-<!doctype html>
-<html lang={language}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <meta name="robots" content="/favicon/sitemap-index.xml" />
-    <meta name="author" content={siteConfig.author} />
-
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.origin} />
-    <meta property="og:image" content={image} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-
-    <link rel="preconnect" href="https://cdn.fontshare.com" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  
-    <title>{title}</title>
-  </head>
-  <body class="mx-auto flex flex-col gap-9 bg-darkslate-700 px-10 py-8 md:gap-20 md:py-16 text-sm text-white min-h-screen max-w-[872px]">
-    <slot />
-  </body>
-</html>
-
-<style is:global>
-  body {
-    font-family: 'Satoshi', sans-serif;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Cabinet Grotesk', sans-serif;
-  }
-
-  p {
-    font-family: 'Satoshi', sans-serif;
-  }
-</style>
+<BaseLayout>
+  <Header />
+  <slot />
+</BaseLayout>
