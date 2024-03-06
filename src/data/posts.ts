@@ -1,23 +1,7 @@
-type Post = {
-  title: string
-  description: string
-  slug: string
-  publishedAt: Date
-}
+import { getCollection } from 'astro:content'
 
-export const posts: Post[] = [
-  {
-    title: "React Strict Web",
-    description: "Learn how to get started with React Strict Web.",
-    slug: "/posts/react-strict-web",
-    publishedAt: new Date(),
-  },
-  {
-    title: "Setting up a React Native Monorepo",
-    description: "Learn how to set up a React Native Monorepo",
-    slug: "/posts/react-native-monorepo",
-    publishedAt: new Date(),
-  },
-];
+export const posts = (await getCollection('posts'))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .map(post => ({ ...post.data, slug: post.slug }))
 
 export const latestPosts = (limit: number) => posts.slice(0, limit)
