@@ -10,12 +10,6 @@ export default defineConfig({
 		defaultLocale: 'pt-br',
 		locales: ['pt-br', 'en'],
 	},
-	domains: {
-		en: 'https://en.migueldaipre.dev',
-	},
-	experimental: {
-		i18nDomains: true,
-	},
 	integrations: [
 		UnoCSS({
 			injectReset: true,
