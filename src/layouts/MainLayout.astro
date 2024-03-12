@@ -5,10 +5,9 @@ import BaseLayout from './BaseLayout.astro'
 import type { ComponentProps } from 'astro/types'
 
 type Props = ComponentProps<typeof BaseLayout>
-const { ...props } = Astro
 ---
 
-<BaseLayout {...props}>
+<BaseLayout {...Astro.props}>
   <Header />
   <slot />
 </BaseLayout>
