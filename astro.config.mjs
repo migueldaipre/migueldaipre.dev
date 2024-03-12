@@ -1,18 +1,29 @@
-import { defineConfig } from 'astro/config';
-import UnoCSS from 'unocss/astro';
-import vercel from '@astrojs/vercel/serverless';
-import mdx from '@astrojs/mdx';
+import mdx from '@astrojs/mdx'
+import vercel from '@astrojs/vercel/serverless'
+import { defineConfig } from 'astro/config'
+import UnoCSS from 'unocss/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    UnoCSS({
-      injectReset: true,
-    }),
-    mdx(),
-  ],
-  output: 'server',
-  adapter: vercel({
-    imageService: true,
-  }),
-});
+	site: 'https://migueldaipre.dev',
+	i18n: {
+		defaultLocale: 'pt-br',
+		locales: ['pt-br', 'en'],
+	},
+	domains: {
+		en: 'https://en.migueldaipre.dev',
+	},
+	experimental: {
+		i18nDomains: true,
+	},
+	integrations: [
+		UnoCSS({
+			injectReset: true,
+		}),
+		mdx(),
+	],
+	output: 'server',
+	adapter: vercel({
+		imageService: true,
+	}),
+})
