@@ -2,17 +2,17 @@
 import { siteConfig } from '@config/site'
 
 interface Props {
-  title?: string;
-  description?: string;
-  language?: string;
-  image?: string;
+	title?: string
+	description?: string
+	language?: string
+	image?: string
 }
 
-const { 
-  title = siteConfig.title,
-  description = siteConfig.description,
-  language = siteConfig.language,
-  image = siteConfig.imageOg
+const {
+	title = siteConfig.title,
+	description = siteConfig.description,
+	language = siteConfig.language,
+	image = siteConfig.imageOg,
 } = Astro.props
 ---
 

@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "pnpm dlx @biomejs/biome check --apply ./src"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.7",
@@ -19,6 +20,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.6.0",
     "unocss": "^0.58.5"
   }
 }
