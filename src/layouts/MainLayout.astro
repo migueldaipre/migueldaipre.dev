@@ -1,15 +1,14 @@
 ---
-
-import BaseLayout from './BaseLayout.astro'
 import Header from '@components/Header/Header.astro'
+import BaseLayout from './BaseLayout.astro'
 
-import type { ComponentProps } from 'astro/types';
+import type { ComponentProps } from 'astro/types'
 
 type Props = ComponentProps<typeof BaseLayout>
-
+const { ...props } = Astro
 ---
 
-<BaseLayout {...Astro.props}>
+<BaseLayout {...props}>
   <Header />
   <slot />
 </BaseLayout>
