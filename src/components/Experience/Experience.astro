@@ -1,0 +1,64 @@
+---
+type Exprience = {
+	company: string
+	position: string
+	period: string
+	description: string
+}
+
+const experiences = [
+	{
+		company: 'TOTVS',
+		position: 'Mobile Developer',
+		period: '2022 - Present',
+		description:
+			"As a mobile developer at TOTVS, I was responsible for developing and executing improvements to the facial recognition process, as well as improving the app's performance and keeping it up to date with the latest React Native releases.",
+	},
+	{
+		company: 'FK Grupo',
+		position: 'Software Developer',
+		period: '2019 - 2021',
+		description:
+			"As a software developer at FK Grupo, I was responsible for architecting and developing offline-first mobile app's with React Native, Redux and Redux Saga. I was also responsible for developing and maintaining micro services in Node JS with TDD, using the Kong gateway.",
+	},
+	{
+		company: 'OG Propaganda',
+		position: 'Software Developer',
+		period: '2017 - 2019',
+		description:
+			'As a software developer at OG Propaganda, I was responsible for maintaining and creating new websites with Wordpress. I also created a currency quotation plugin for WP.',
+	},
+] satisfies Exprience[]
+---
+
+<article class="flex flex-col">
+  <header class="flex flex-row w-full">
+    <h3 class="text-primary-100 text-xl font-bold m-0 z-2">Experience</h3>
+  </header>
+
+  {experiences.map((experience) => (
+    <section class="flex flex-col w-full">
+      <div class="gap-6 mt-6">
+        
+          <article
+            class="overflow-hidden rounded-lg p-6 border border-darkslate-100 hover:border-primary-700 hover:-translate-y-2 align-start flex-none justify-start relative transform perspective-1200 w-full transition-all duration-300 ease-in-out col-span-1 h-auto"
+            >
+            <div class="h-full w-full">
+              <div class="flex flex-col gap-2">
+                <div class="flex flex-row justify-between">
+                  <div class="flex gap-2">
+                    <p class="text-primary-100 text-base font-bold m-0 z-2">{experience.company} - </p>
+                    <p class="text-primary-700 text-base m-0 z-2">{experience.position}</p>
+                  </div>
+                  <p class="text-gray-400">{experience.period}</p>
+                </div>
+                {experience.description && (
+                  <p class="text-primary-200 m-0 font-light text-base">{experience.description}</p>
+                )}
+              </div>
+            </div>
+          </article>
+      </div>
+    </section>
+  ))}
+</article>
