@@ -1,23 +1,24 @@
 ---
 import { siteConfig } from '@config/site'
+import { getLangFromUrl } from '@i18n/i18n'
+
+const lang = getLangFromUrl(Astro.url)
 
 interface Props {
 	title?: string
 	description?: string
-	language?: string
 	image?: string
 }
 
 const {
 	title = siteConfig.title,
 	description = siteConfig.description,
-	language = siteConfig.language,
 	image = siteConfig.imageOg,
 } = Astro.props
 ---
 
 <!doctype html>
-<html lang={language}>
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

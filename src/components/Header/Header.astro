@@ -2,6 +2,9 @@
 import { removeTrailingSlash } from '@utils/removeTrailingSlash'
 
 const pathname = removeTrailingSlash(Astro.url.pathname)
+
+import { getLangFromUrl, useTranslations } from '@i18n/i18n'
+const t = useTranslations(getLangFromUrl(Astro.url))
 ---
 
 <header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
@@ -18,7 +21,7 @@ const pathname = removeTrailingSlash(Astro.url.pathname)
             ["hover:text-gray-100"]: true,
             ["hover:text-primary-500"]: pathname === "/",
             ["text-primary-700"]: pathname === "/",
-          }}>Home</a
+          }}>{t('site.home')}</a
         >
       </li>
       <li>/</li>
@@ -29,7 +32,7 @@ const pathname = removeTrailingSlash(Astro.url.pathname)
             ["hover:text-gray-100"]: true,
             ["hover:text-primary-500"]: pathname === "/posts",
             ["text-primary-600"]: pathname === "/posts",
-          }}>Posts</a
+          }}>{t('site.posts')}</a
         >
       </li>
     </ul>

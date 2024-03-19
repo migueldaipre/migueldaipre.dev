@@ -1,4 +1,7 @@
 ---
+import { getLangFromUrl, useTranslations } from '@i18n/i18n'
+const t = useTranslations(getLangFromUrl(Astro.url))
+
 type Exprience = {
 	company: string
 	position: string
@@ -10,30 +13,27 @@ const experiences = [
 	{
 		company: 'TOTVS',
 		position: 'Mobile Developer',
-		period: '2022 - Present',
-		description:
-			"As a mobile developer at TOTVS, I was responsible for developing and executing improvements to the facial recognition process, as well as improving the app's performance and keeping it up to date with the latest React Native releases.",
+		period: t('experience.totvs.period'),
+		description: t('experience.totvs.description'),
 	},
 	{
 		company: 'FK Grupo',
 		position: 'Software Developer',
 		period: '2019 - 2021',
-		description:
-			"As a software developer at FK Grupo, I was responsible for architecting and developing offline-first mobile app's with React Native, Redux and Redux Saga. I was also responsible for developing and maintaining micro services in Node JS with TDD, using the Kong gateway.",
+		description: t('experience.fk.description'),
 	},
 	{
 		company: 'OG Propaganda',
 		position: 'Software Developer',
 		period: '2017 - 2019',
-		description:
-			'As a software developer at OG Propaganda, I was responsible for maintaining and creating new websites with Wordpress. I also created a currency quotation plugin for WP.',
+		description: t('experience.og.description'),
 	},
 ] satisfies Exprience[]
 ---
 
 <article class="flex flex-col">
   <header class="flex flex-row w-full">
-    <h3 class="text-primary-100 text-xl font-bold m-0 z-2">Experience</h3>
+    <h3 class="text-primary-100 text-xl font-bold m-0 z-2">{t('site.experiences')}</h3>
   </header>
 
   {experiences.map((experience) => (

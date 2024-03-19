@@ -1,18 +1,21 @@
 ---
 import SocialLinks from '@components/SocialLinks/SocialLinks.astro'
+
+import { getLangFromUrl, useTranslations } from '@i18n/i18n'
+const t = useTranslations(getLangFromUrl(Astro.url))
 ---
 
 <article class="flex flex-col">
   <header class="flex flex-row w-full justify-between">
-    <h3 class="text-primary-100 text-xl font-bold m-0 z-2">Get in touch</h3>
+    <h3 class="text-primary-100 text-xl font-bold m-0 z-2">{t('site.getInTouch')}</h3>
   </header>
 
   <section class="flex flex-col w-full gap-6 mt-6">
-    <p class="text-primary-200 m-0 font-light text-base">Email me at 
+    <p class="text-primary-200 m-0 font-light text-base">{t('contact.emailMeAt')}
       <a href={`mailto:migueldaipre@gmail.com`} class="text-primary-700 hover:text-primary-500">
         migueldaipre@gmail.com
       </a>
-      or follow me via my social links.
+      {t('contact.orFollowMeOn')}
     </p>
     <SocialLinks />
   </section>

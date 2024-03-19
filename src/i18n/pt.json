@@ -1,0 +1,17 @@
+{
+  "site.home": "Início",
+  "site.posts": "Postagens",
+  "site.latestPosts": "Últimas postagens",
+  "site.seeAllPosts": "Ver todas postagens",
+  "site.experiences": "Experiências",
+  "site.getInTouch": "Entre em contato",
+  "site.soonStayConnected": "Em breve, fique conectado",
+  "presentation.title": "Olá, Eu sou o Miguel",
+  "presentation.description": "Sou um desenvolvedor brasileiro de React Native e contribuidor OSS com mais de 7 anos de experiência. Atualmente trabalho com React Native e Typescript. Também sou apaixonado por código aberto e Bitcoin ₿.",
+  "experience.totvs.description": "Como desenvolvedor de aplicativos móveis na TOTVS, fui responsável por desenvolver e executar melhorias no processo de reconhecimento facial, além de aprimorar o desempenho do aplicativo e mantê-lo atualizado com as versões mais recentes do React Native.",
+  "experience.totvs.period": "2022 - Presente",
+  "experience.fk.description": "Como desenvolvedor de software no FK Grupo, fui responsável por arquitetar e desenvolver aplicativos móveis offline-first com React Native, Redux e Redux Saga. Também fui responsável pelo desenvolvimento e manutenção de microsserviços em Node JS com TDD, usando o gateway Kong.",
+  "experience.og.description": "Como desenvolvedor de software na OG Propaganda, fui responsável pela manutenção e criação de novos sites com o Wordpress. Também criei um plugin de cotação de moedas para WP.",
+  "contact.emailMeAt": "Envie-me um e-mail para",
+  "contact.orFollowMeOn": "ou me siga nas redes sociais."
+}

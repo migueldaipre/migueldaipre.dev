@@ -3,11 +3,14 @@ import PostCard from '@components/PostCard/PostCard.astro'
 import MainLayout from '@layouts/MainLayout.astro'
 
 import { posts } from '@data/posts'
+
+import { getLangFromUrl, useTranslations } from '@i18n/i18n'
+const t = useTranslations(getLangFromUrl(Astro.url))
 ---
 
 <MainLayout>
   <main class="flex flex-col">
-    <h1 class="text-2xl text-gray-100">Posts</h1>
+    <h1 class="text-2xl text-gray-100">{t('site.posts')}</h1>
 
     <article class="flex flex-col">
       <section class="flex flex-col w-full">
