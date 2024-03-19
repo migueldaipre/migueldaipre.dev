@@ -4,7 +4,9 @@ import MiguelPicture from '@assets/images/miguel-daipre-picture.jpeg'
 
 import Card from '@components/Card/Card.astro'
 import SocialLinks from '@components/SocialLinks/SocialLinks.astro'
-import { presentation } from '@config/presentation'
+
+import { getLangFromUrl, useTranslations } from '@i18n/i18n'
+const t = useTranslations(getLangFromUrl(Astro.url))
 ---
 <Card>
   <div class="flex gap-8 items-center justify-between max-sm:flex-wrap">
@@ -17,8 +19,8 @@ import { presentation } from '@config/presentation'
     />
 
     <div class="flex flex-col gap-4">
-      <h1 class="text-primary-100 text-2xl font-bold m-0 z-2">{presentation.title}</h1>
-      <h2 class="text-primary-200 m-0 font-light text-base">{presentation.description}</h2>
+      <h1 class="text-primary-100 text-2xl font-bold m-0 z-2">{t('presentation.title')} 👋</h1>
+      <h2 class="text-primary-200 m-0 font-light text-base">{t('presentation.description')}</h2>
       <SocialLinks />
     </div>
   </div>
