@@ -3,6 +3,8 @@ import { getLangFromUrl, useTranslations } from '@i18n/i18n'
 const t = useTranslations(getLangFromUrl(Astro.url))
 
 import { Image } from 'astro:assets'
+import FKLogo from '@assets/images/fk.png'
+import OGLogo from '@assets/images/og.png'
 import TOTVSLogo from '@assets/images/totvs.png'
 
 interface ImageMetadata {
@@ -33,12 +35,14 @@ const experiences = [
 		position: 'Software Developer',
 		period: '2019 - 2021',
 		description: t('experience.fk.description'),
+		logo: FKLogo,
 	},
 	{
 		company: 'OG Propaganda',
 		position: 'Software Developer',
 		period: '2017 - 2019',
 		description: t('experience.og.description'),
+		logo: OGLogo,
 	},
 ] satisfies Exprience[]
 ---
@@ -60,7 +64,7 @@ const experiences = [
                   <div class="flex items-center gap-2">
                     {experience.logo && (
                       <Image
-                        class="w-8 h-8 rounded-full"
+                        class="w-10 h-10 rounded-full"
                         decoding="async"
                         loading="eager"
                         src={experience.logo} 
