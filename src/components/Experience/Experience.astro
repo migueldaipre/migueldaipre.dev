@@ -2,11 +2,22 @@
 import { getLangFromUrl, useTranslations } from '@i18n/i18n'
 const t = useTranslations(getLangFromUrl(Astro.url))
 
+import { Image } from 'astro:assets'
+import TOTVSLogo from '@assets/images/totvs.png'
+
+interface ImageMetadata {
+	src: string
+	width: number
+	height: number
+	format: string
+}
+
 type Exprience = {
 	company: string
 	position: string
 	period: string
 	description: string
+	logo?: ImageMetadata
 }
 
 const experiences = [
@@ -15,6 +26,7 @@ const experiences = [
 		position: 'Mobile Developer',
 		period: t('experience.totvs.period'),
 		description: t('experience.totvs.description'),
+		logo: TOTVSLogo,
 	},
 	{
 		company: 'FK Grupo',
@@ -45,7 +57,16 @@ const experiences = [
             <div class="h-full w-full">
               <div class="flex flex-col gap-2">
                 <div class="xl:flex xl:flex-row xl:justify-between">
-                  <div class="flex gap-2">
+                  <div class="flex items-center gap-2">
+                    {experience.logo && (
+                      <Image
+                        class="w-8 h-8 rounded-full"
+                        decoding="async"
+                        loading="eager"
+                        src={experience.logo} 
+                        alt={experience.company + ' - Logo'}
+                      />
+                    )}
                     <p class="text-primary-100 text-base font-bold m-0 z-2">{experience.company} - </p>
                     <p class="text-primary-700 text-base m-0 z-2">{experience.position}</p>
                   </div>
