@@ -16,13 +16,11 @@ const { post } = Astro.props
 const { Content } = await post.render()
 ---
 <MainLayout title={post.data.title} description={post.data.description}>
-  <main class="flex flex-col gap-6">
-    <h1 class="text-2xl text-gray-100">{post.data.title}</h1>
-    <h2 class="text-primary-200 m-0 font-light text-base">{post.data.description}</h2>
-    
-    <article class="flex flex-col">
+  <main class="flex flex-col gap-4">
+    <h1 class="text-4xl text-gray-100">{post.data.title}</h1>
+    <h2 class="text-primary-200 font-light text-base">{post.data.description}</h2>
+    <article class="text-base prose">
       <Content />
     </article>
   </main>
 </MainLayout>
-
