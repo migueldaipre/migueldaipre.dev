@@ -9,7 +9,7 @@ interface Presentation {
 }
 
 export const presentation: Presentation = {
-	mail: 'migueldaipre@gmail.com',
+	mail: 'contato@migueldaipre.dev',
 	socials: [
 		{
 			label: 'GitHub',

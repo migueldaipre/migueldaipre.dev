@@ -1,5 +1,6 @@
 ---
 import { removeTrailingSlash } from '@utils/removeTrailingSlash'
+import { presentation } from '@config/presentation'
 
 const pathname = removeTrailingSlash(Astro.url.pathname)
 
@@ -8,8 +9,8 @@ const t = useTranslations(getLangFromUrl(Astro.url))
 ---
 
 <header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
-  <a href={`mailto:migueldaipre@gmail.com`} class="hover:text-primary-500"
-    >migueldaipre@gmail.com</a
+  <a href="/" class="hover:text-primary-500"
+    >{presentation.mail}</a
   >
 
   <nav role="navigation">

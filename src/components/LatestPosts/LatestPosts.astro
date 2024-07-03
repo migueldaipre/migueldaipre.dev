@@ -12,7 +12,7 @@ const t = useTranslations(getLangFromUrl(Astro.url))
 <article class="flex flex-col">
   <header class="flex flex-row w-full justify-between">
     <h3 class="text-primary-100 text-xl font-bold m-0 z-2">{t('site.latestPosts')}</h3>
-    <Link href="/posts" label={t('site.seeAllPosts')} isUnderline target="_self" />
+    {posts.length > 0 && <Link href="/posts" label={t('site.seeAllPosts')} isUnderline target="_self" />}
   </header>
 
   <section class="flex flex-col w-full">
