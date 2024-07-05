@@ -2,7 +2,7 @@ import english from './en.json'
 import portugues from './pt.json'
 
 export const Languages = {
-	pt: 'pt-BR',
+	pt: 'pt-br',
 	en: 'en',
 }
 

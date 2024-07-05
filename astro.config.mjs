@@ -12,8 +12,12 @@ const prettyCodeOptions = {
 export default defineConfig({
 	site: 'https://migueldaipre.dev',
 	i18n: {
-		defaultLocale: 'pt-BR',
-		locales: ['pt-BR', 'en'],
+		defaultLocale: 'pt-br',
+		locales: ['pt-br', 'en'],
+		routing: {
+			redirectToDefaultLocale: true,
+			prefixDefaultLocale: true,
+		}
 	},
 	integrations: [
 		UnoCSS({
