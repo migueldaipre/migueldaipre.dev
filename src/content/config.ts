@@ -17,6 +17,7 @@ const posts = defineCollection({
 		tags: z.array(z.string()).default(['others']),
 		author: z.string().optional(),
 		isDraft: z.boolean().default(false),
+		lang: z.enum(['pt-br', 'en']).default('pt-br')
 	}),
 })
 
