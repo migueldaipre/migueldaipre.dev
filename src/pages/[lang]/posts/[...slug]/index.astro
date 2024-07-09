@@ -6,16 +6,20 @@ export const prerender = true
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts')
-	return posts.map(post => ({
-		params: { slug: post.slug },
-		props: { post },
-	}))
+	return posts.map(post => {
+		const [lang, ...slug] = post.slug.split('/')
+
+		return {
+			params: { lang, slug: slug.join('/') || undefined },
+			props: { post },
+		}
+	})
 }
 
 const { post } = Astro.props
 const { Content } = await post.render()
 ---
-<MainLayout title={post.data.title} description={post.data.description}>
+<MainLayout title={post.data.title} description={post.data.description} image='/og-image.svg'>
   <main class="flex flex-col gap-4">
     <h1 class="text-4xl text-gray-100">{post.data.title}</h1>
     <h2 class="text-primary-200 font-light text-base">{post.data.description}</h2>

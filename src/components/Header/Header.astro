@@ -1,6 +1,6 @@
 ---
-import { removeTrailingSlash } from '@utils/removeTrailingSlash'
 import { presentation } from '@config/presentation'
+import { removeTrailingSlash } from '@utils/removeTrailingSlash'
 
 const pathname = removeTrailingSlash(Astro.url.pathname)
 
@@ -9,8 +9,8 @@ const t = useTranslations(getLangFromUrl(Astro.url))
 
 const language = Astro.currentLocale
 
-const homePath = `/${language}`;
-const postsPath = `/${language}/posts`;
+const homePath = `/${language}`
+const postsPath = `/${language}/posts`
 ---
 
 <header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">

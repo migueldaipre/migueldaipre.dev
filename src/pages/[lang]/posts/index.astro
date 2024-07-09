@@ -3,10 +3,13 @@ import PostCard from '@components/PostCard/PostCard.astro'
 import MainLayout from '@layouts/MainLayout.astro'
 
 import { getPosts } from '@data/posts'
-const posts = await getPosts()
+
+const language = Astro.currentLocale
 
 import { getLangFromUrl, useTranslations } from '@i18n/i18n'
 const t = useTranslations(getLangFromUrl(Astro.url))
+
+const posts = await getPosts(language)
 ---
 
 <MainLayout>

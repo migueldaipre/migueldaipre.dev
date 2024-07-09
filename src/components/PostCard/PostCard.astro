@@ -8,13 +8,16 @@ interface Props {
 	slug: string
 }
 
+const language = Astro.currentLocale
 const { title, description, publishedAt, slug } = Astro.props
+
+const postURL = `/${language}/posts/${slug}`
 ---
 
 <article
   class="overflow-hidden rounded-lg p-6 border border-darkslate-100 hover:border-primary-700 hover:-translate-y-2 align-start flex-none justify-start relative transform perspective-1200 w-full transition-all duration-300 ease-in-out col-span-1 h-auto cursor-pointer"
 >
-  <a href={`/posts/${slug}`} class="h-full w-full">
+  <a href={postURL} class="h-full w-full">
     <div class="flex flex-col gap-2">
       <p class="text-primary-100 text-base font-bold m-0 z-2">{title}</p>
       <p class="text-primary-200 m-0 font-light text-base truncate">{description}</p>
