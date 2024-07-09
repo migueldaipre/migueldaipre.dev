@@ -7,7 +7,7 @@ import type {
 	InferGetStaticPropsType,
 } from 'astro'
 
-export const prerender = true
+// export const prerender = true
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts', ({ data }) => !data.isDraft)
