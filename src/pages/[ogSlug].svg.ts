@@ -7,14 +7,13 @@ import type {
 	InferGetStaticPropsType,
 } from 'astro'
 
-// export const prerender = true
+export const prerender = true
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts', ({ data }) => !data.isDraft)
 	return posts
 		.filter(({ data }) => !data.ogImage)
 		.map(({ data }) => ({
-			// Pass the title of the post so we can use it in the API route and as a static path
 			params: { title: data.title, ogSlug: data.ogSlug },
 		}))
 }
