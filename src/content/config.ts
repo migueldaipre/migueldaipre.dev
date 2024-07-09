@@ -14,7 +14,6 @@ const posts = defineCollection({
 			.optional()
 			.transform(str => (str ? new Date(str) : undefined)),
 		ogImage: z.string().optional(),
-		ogSlug: z.string(),
 		tags: z.array(z.string()).default(['others']),
 		author: z.string().optional(),
 		isDraft: z.boolean().default(false),

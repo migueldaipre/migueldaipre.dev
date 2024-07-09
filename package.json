@@ -21,6 +21,7 @@
     "astro": "^4.11.5",
     "rehype-pretty-code": "^0.13.2",
     "satori": "^0.10.14",
+    "satori-html": "^0.3.2",
     "sharp": "^0.33.4",
     "shiki": "^1.9.1",
     "typescript": "^5.3.3"
