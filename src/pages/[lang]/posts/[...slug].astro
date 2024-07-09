@@ -7,13 +7,13 @@ export const prerender = true
 export async function getStaticPaths() {
 	const posts = await getCollection('posts')
 	return posts.map(post => {
-    const [lang, ...slug] = post.slug.split('/');
+		const [lang, ...slug] = post.slug.split('/')
 
-    return {
-		  params: { lang, slug: slug.join('/') || undefined },
-		  props: { post },
-	  }
-  })
+		return {
+			params: { lang, slug: slug.join('/') || undefined },
+			props: { post },
+		}
+	})
 }
 
 const { post } = Astro.props

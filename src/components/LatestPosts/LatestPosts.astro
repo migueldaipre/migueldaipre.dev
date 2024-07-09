@@ -4,12 +4,11 @@ import PostCard from '@components/PostCard/PostCard.astro'
 
 import { latestPosts } from '@data/posts'
 
-
 import { getLangFromUrl, useTranslations } from '@i18n/i18n'
 const t = useTranslations(getLangFromUrl(Astro.url))
 
 const language = Astro.currentLocale
-const postsPath = `/${language}/posts`;
+const postsPath = `/${language}/posts`
 
 const posts = await latestPosts(2, language)
 ---
