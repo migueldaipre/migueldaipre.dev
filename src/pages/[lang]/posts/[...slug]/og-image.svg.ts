@@ -3,10 +3,12 @@ import { renderOG } from '@utils/renderOG'
 
 import type { APIRoute } from 'astro'
 
+export const prerender = true
+
 export async function getStaticPaths() {
 	const posts = await getCollection('posts')
 	return posts.map(post => ({
-		params: { slug: post.slug },
+		params: { slug: post.slug, lang: post.data.lang },
 		props: post,
 	}))
 }
