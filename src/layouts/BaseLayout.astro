@@ -15,6 +15,8 @@ const {
 	description = siteConfig.description,
 	image = siteConfig.imageOg,
 } = Astro.props
+
+const ogImage = `${Astro.url.origin}/${image}`
 ---
 
 <!doctype html>
@@ -31,7 +33,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.origin} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     
     <meta property="og:image:width" content="800" />
     <meta property="og:image:height" content="400" />
