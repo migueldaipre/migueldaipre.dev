@@ -19,5 +19,5 @@ export async function getStaticPaths() {
 
 export const GET: APIRoute = async function get({ params }) {
 	const post = await getEntry('posts', `${params.lang}/${params.slug}`)
-	return renderOG(post?.data.title ?? '', post?.data.description)
+	return await renderOG(post?.data.title ?? '', post?.data.description)
 }
