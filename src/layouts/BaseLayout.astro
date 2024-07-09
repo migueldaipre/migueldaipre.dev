@@ -17,7 +17,7 @@ const {
 } = Astro.props
 
 const ogUrl = Astro.url.href
-const ogImage = `${Astro.url.href}/${image}`
+const ogImage = ogUrl + image
 ---
 
 <!doctype html>
