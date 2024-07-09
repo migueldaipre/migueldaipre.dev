@@ -13,7 +13,7 @@ const posts = defineCollection({
 			.string()
 			.optional()
 			.transform(str => (str ? new Date(str) : undefined)),
-		heroImage: z.string().optional(),
+		ogImage: z.string().optional(),
 		tags: z.array(z.string()).default(['others']),
 		author: z.string().optional(),
 		isDraft: z.boolean().default(false),
