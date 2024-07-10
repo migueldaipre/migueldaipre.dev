@@ -1,9 +1,43 @@
 ---
 title: 'Novidades do React Native 0.75'
-description: ''
+description: 'Recentemente o React Native lançou a release candidate 0.75. A atualização ativa o React 19 e traz diversas melhorias em API, gerencimento de memória e aprimora a experiência para os desenvolvedores e usuários finais.'
 publishedAt: 2024-07-08
-isDraft: false
+isDraft: true
 lang: 'pt-br'
 ---
 
-#### Portugues
+##### Olá, desensolvedores!
+
+Este é meu primeiro post sobre o mundo React Native e gostaria de falar sobre as novidades importantes da versão 0.75-rc. Fica aqui comigo e acompanhe as principais novidades dessa versão.
+
+#### 1. React 19
+
+#### 2. Migração da CLI da comunidade para o Core do React Native [(RFC-0759)](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md#rfc0759-react-native-frameworks)
+
+```typescript
+  
+```
+
+#### 3. Yoga - Suporte a % (porcentagem) na propriedade gap
+
+```tsx
+  export function ComponentWithGap() {
+    return (
+      <View style={stylesheet.container}>
+        <View>
+          <Text> Box 1 </Text>
+        </View>
+        <View>
+          <Text> Box 2 </Text>
+        </View>
+      </View>
+    )
+  }
+
+  const stylesheet = StyleSheet.create({
+    container: {
+      flex: 1,
+      gap: '10%'
+    },
+  })
+```
