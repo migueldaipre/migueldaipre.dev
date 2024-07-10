@@ -1,5 +1,5 @@
 ---
-import { siteConfig } from '@config/site'
+import { sitesConfig } from '@config/site'
 import { getLangFromUrl } from '@i18n/i18n'
 
 const lang = getLangFromUrl(Astro.url)
@@ -9,6 +9,8 @@ interface Props {
 	description?: string
 	image?: string
 }
+
+const siteConfig = sitesConfig[lang as 'en' | 'pt-br']
 
 const {
 	title = siteConfig.title,
@@ -29,7 +31,7 @@ const ogImage = ogUrl + image
     <meta name="description" content={description} />
     <meta name="author" content={siteConfig.author} />
 
-    <meta property="og:site_name" content={title} />
+    <meta property="og:site_name" content={siteConfig.title} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

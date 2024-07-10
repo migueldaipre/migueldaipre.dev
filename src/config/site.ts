@@ -5,9 +5,18 @@ interface SiteConfig {
 	author: string
 }
 
-export const siteConfig: SiteConfig = {
-	title: 'Miguel Daipré - React Native Developer',
-	description: 'I am a Senior React Native Developer and OSS Contributor',
-	imageOg: 'og.jpg',
-	author: 'Miguel Daipré',
+export const sitesConfig: Record<'pt-br' | 'en', SiteConfig> = {
+	en: {
+		title: 'Miguel Daipré - React Native Developer',
+		description: 'I am a Senior React Native Developer and OSS Contributor',
+		imageOg: 'og.jpg',
+		author: 'Miguel Daipré',
+	},
+	'pt-br': {
+		title: 'Miguel Daipré - Desenvolvedor React Native',
+		description:
+			'Desenvolvedor React Native Especialista e colaborador Open Source',
+		imageOg: 'og.jpg',
+		author: 'Miguel Daipré',
+	},
 }
