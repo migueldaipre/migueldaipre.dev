@@ -1,9 +1,110 @@
 ---
-title: 'React Native 0.75 - News'
-description: ''
-publishedAt: 2024-07-08
-isDraft: true
+title: "React Native 0.75: What's New"
+description: 'Recently, React Native released release candidate 0.75. The update enables React 19 and brings several API improvements, memory management, and enhances the experience for developers and end users.'
+publishedAt: 2024-07-18
+isDraft: false
 lang: 'en'
 ---
+import { Image } from 'astro:assets';
+import RN75InitWarning from '../../../assets/images/posts/rn-75-init-deprecation-message.png';
 
-#### TODO
+<div style={{padding: '1rem 0.4rem'}}>
+### Hello, React Native developers!
+
+React Native 0.75 is here, bringing a wave of exciting improvements and enhancements that will elevate your mobile development experience. 
+Let's dive into the key highlights of this release:
+
+</div>
+
+#### 1. React 19: Faster, More Efficient, and Future-Ready
+<div style={{padding: '1rem 0.4rem'}}>
+While React 19 doesn't introduce groundbreaking new features specifically for React Native 0.75, it ensures you're leveraging the best in terms of performance, stability, and future-proofing. This means:
+
+- More Responsive Apps: Enjoy smooth, lag-free interfaces even on devices with limited resources.
+- Enhanced Memory Management: Optimized memory usage for overall better performance.
+- Solid Architecture for the Future: Stay prepared for upcoming React innovations with React 19 already integrated, paving the way for React Compiler usage in the future.
+
+For more details, check out Pull Request  [#44990](https://github.com/facebook/react-native/pull/44990)
+</div>
+
+#### 2. Migrating Community CLI Commands to React Native Core [(RFC-0759)](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md#rfc0759-react-native-frameworks)
+
+<div style={{ padding: '1rem 0.4rem'}}>
+The following commands have been moved from the community CLI to React Native Core. This change aims to simplify CLI maintenance and provide a more cohesive development experience.
+```shell
+react-native clean
+react-native build-android --mode=release
+react-native build-ios --mode=release
+```
+When using the `react-native init` command, a deprecation warning will be displayed. To continue using the functionality of the init command after September 29, 2024, use the community CLI:
+<Image src={RN75InitWarning} alt="react native 0.75 init deprecation warning" />
+
+```shell
+npx @react-native-community/cli init
+```
+
+For more details, see the following PR's: [#43289](https://github.com/facebook/react-native/pull/43289)
+[#43288](https://github.com/facebook/react-native/pull/43288)
+[#43287](https://github.com/facebook/react-native/pull/43287)
+[commit 47a3f52007](https://github.com/facebook/react-native/commit/47a3f5200708fc0247d8b403dbe447af636b79cb)
+</div>
+
+#### 3. Community Template [(RFC-0759)](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md#evolving-the-react-native-community-template--cli)
+
+<div style={{ padding: '1rem 0.4rem'}}>
+  The default template for a new project created with
+
+  ```sh
+  npx @react-native-community/cli init
+  ```
+
+  is now available separately from React Native Core [(react-native-community/template)](https://github.com/react-native-community/template).
+
+  **This repository contains the template used by the Community (CLI) to start a new React Native project.**
+</div>
+
+
+#### 4. Yoga: % Support in the gap property
+
+<div style={{ padding: '1rem 0.4rem'}}>
+Create even more flexible and responsive layouts with Yoga's support for percentages (%) in the gap property. This feature facilitates dynamic spacing between elements, adapting perfectly to different screen sizes.
+```tsx
+  export function MyScreen() {
+    return (
+      <View style={stylesheet.container}>
+        <View>
+          <Text> Box 1 </Text>
+        </View>
+        <View>
+          <Text> Box 2 </Text>
+        </View>
+      </View>
+    )
+  }
+
+  const stylesheet = StyleSheet.create({
+    container: {
+      flex: 1,
+      gap: '10%'
+    },
+  })
+```
+</div>
+
+### Conclusion
+
+React Native 0.75 solidifies the platform as a powerful and reliable choice for mobile app development.
+
+Explore these and many other new features in React Native 0.75 today.
+
+Keep an eye on React Compiler, which has the potential to bring even more performance and optimizations to your React Native apps in the future.
+
+See all the changes in the [Changelog](https://github.com/facebook/react-native/blob/main/CHANGELOG.md).
+
+##### Happy coding!
+
+### Disclaimer
+
+The information provided in this post has been collected and compiled from the official changelog and pull requests for React Native 0.75.
+
+Therefore, it is possible that there may be inaccuracies or errors in the information described here. It is recommended that you consult the official React Native documentation for the most up-to-date and accurate information.

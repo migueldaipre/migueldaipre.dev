@@ -1,27 +1,77 @@
 ---
 title: 'Novidades do React Native 0.75'
-description: 'Recentemente o React Native lançou a release candidate 0.75. A atualização ativa o React 19 e traz diversas melhorias em API, gerencimento de memória e aprimora a experiência para os desenvolvedores e usuários finais.'
-publishedAt: 2024-07-08
-isDraft: true
+description: 'Recentemente o React Native lançou a release candidate 0.75. A atualização ativa o React 19 e traz diversas melhorias em API, gerenciamento de memória e aprimora a experiência para os desenvolvedores e usuários finais.'
+publishedAt: 2024-07-18
+isDraft: false
 lang: 'pt-br'
 ---
+import { Image } from 'astro:assets';
+import RN75InitWarning from '../../../assets/images/posts/rn-75-init-deprecation-message.png';
 
-##### Olá, desensolvedores!
+<div style={{padding: '1rem 0.4rem'}}>
+### Olá, desenvolvedores React Native!
 
-Este é meu primeiro post sobre o mundo React Native e gostaria de falar sobre as novidades importantes da versão 0.75-rc. Fica aqui comigo e acompanhe as principais novidades dessa versão.
+Neste post, vamos explorar as principais novidades da versão 0.75 do React Native, 
+que traz diversas melhorias significativas para a experiência de desenvolvimento e a performance dos aplicativos. 
+Prepare-se para se encantar com as novas funcionalidades e recursos que tornam o desenvolvimento de apps mobile ainda mais eficiente e prazeroso!
+</div>
 
-#### 1. React 19
+#### 1. React 19: Mais Rápido, Mais Eficiente e Preparado para o Futuro
+<div style={{padding: '1rem 0.4rem'}}>
+Embora o React 19 não traga grandes novidades específicas para o React Native 0.75 em termos de funcionalidades, ele garante que você esteja aproveitando o melhor em termos de performance, estabilidade e preparação para o futuro. Isso significa:
 
-#### 2. Migração da CLI da comunidade para o Core do React Native [(RFC-0759)](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md#rfc0759-react-native-frameworks)
+- Aplicações mais responsivas: Desfrute de interfaces fluidas e sem travamentos, mesmo em dispositivos com recursos limitados.
+- Melhorias no gerenciamento de memória: Otimização do uso da memória para um desempenho geral mais eficiente.
+- Base sólida para o futuro: Fique preparado para as próximas inovações do React com a versão 19 já integrada, abrindo caminho para o uso do React Compiler no futuro.
 
-```typescript
-  
+Para mais detalhes, veja o Pull Request [#44990](https://github.com/facebook/react-native/pull/44990)
+</div>
+
+#### 2. Migração de Comandos da CLI da Comunidade para o Core do React Native [(RFC-0759)](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md#rfc0759-react-native-frameworks)
+
+<div style={{ padding: '1rem 0.4rem'}}>
+Os comandos abaixo foram movidos da CLI da comunidade para o Core do React Native. Essa mudança visa simplificar a manutenção da CLI e oferecer uma experiência de desenvolvimento mais coesa.
+```shell
+react-native clean
+react-native build-android --mode=release
+react-native build-ios --mode=release
+```
+Ao utilizar o comando `react-native init`, uma mensagem de aviso sobre sua depreciação será exibida. Para continuar utilizando a funcionalidade do comando init após o dia 29 de setembro de 2024, utilize a CLI da comunidade:
+
+<Image src={RN75InitWarning} alt="react native 0.75 init deprecation warning" />
+
+```shell
+npx @react-native-community/cli init
 ```
 
-#### 3. Yoga - Suporte a % (porcentagem) na propriedade gap
+Para mais detalhes, veja os PR's a seguir: [#43289](https://github.com/facebook/react-native/pull/43289)
+[#43288](https://github.com/facebook/react-native/pull/43288)
+[#43287](https://github.com/facebook/react-native/pull/43287)
+[commit 47a3f52007](https://github.com/facebook/react-native/commit/47a3f5200708fc0247d8b403dbe447af636b79cb)
+</div>
+
+#### 3. Template Padrão da Comunidade [(RFC-0759)](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md#evolving-the-react-native-community-template--cli)
+
+<div style={{ padding: '1rem 0.4rem'}}>
+  Agora o template padrão de um novo projeto iniciado com
+
+  ```sh
+  npx @react-native-community/cli init
+  ```
+
+  está disponível separadamente do Core do React Native [(react-native-community/template)](https://github.com/react-native-community/template).
+
+  **Este repositório contém o template usado pela Comunidade (CLI) para iniciar um novo projeto React Native.**
+</div>
+
+
+#### 4. Yoga: Suporte a % na Propriedade gap
+
+<div style={{ padding: '1rem 0.4rem'}}>
+Crie layouts ainda mais flexíveis e responsivos com o suporte a porcentagens na propriedade gap do Yoga. Essa funcionalidade facilita o espaçamento entre elementos de forma dinâmica, adaptando-se perfeitamente a diferentes tamanhos de tela.
 
 ```tsx
-  export function ComponentWithGap() {
+  export function MyScreen() {
     return (
       <View style={stylesheet.container}>
         <View>
@@ -41,3 +91,22 @@ Este é meu primeiro post sobre o mundo React Native e gostaria de falar sobre a
     },
   })
 ```
+</div>
+
+### Conclusão
+
+O React Native 0.75 consolida a plataforma como uma escolha poderosa e confiável para o desenvolvimento de apps mobile.
+
+Explore essas e muitas outras novidades do React Native 0.75 hoje mesmo.
+
+Fique de olho no React Compiler, que tem potencial para trazer ainda mais performance e otimizações para seus aplicativos React Native no futuro.
+
+Veja todas as mudanças no [Changelog](https://github.com/facebook/react-native/blob/main/CHANGELOG.md).
+
+##### Happy coding!
+
+### Aviso
+
+As informações presentes neste post foram coletadas e compiladas a partir do changelog e pull requests oficiais do React Native 0.75.
+
+Portanto, é possível que existam imprecisões ou erros nas informações aqui descritas. Recomendo que você consulte a documentação oficial do React Native para obter as informações mais recentes e precisas.

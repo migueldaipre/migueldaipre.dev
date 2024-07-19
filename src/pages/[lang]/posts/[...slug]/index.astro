@@ -22,8 +22,8 @@ const { Content } = await post.render()
 <MainLayout title={post.data.title} description={post.data.description} image={post.data.ogImage}>
   <main class="flex flex-col gap-4">
     <h1 class="text-4xl text-gray-100 font-bold">{post.data.title}</h1>
-    <h2 class="text-primary-200 text-xl font-light">{post.data.description}</h2>
-    <article class="text-base prose mt-10">
+    <h2 class="text-primary-200 text-xl font-light pb-5">{post.data.description}</h2>
+    <article class="text-base prose pt-5 border-t border-t-style-dashed">
       <Content />
     </article>
   </main>
