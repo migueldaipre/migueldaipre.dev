@@ -1,3 +1,3 @@
 # migueldaipre.dev
 
-#### My personal website built with Astro, UnoCSS and Typescript 🚀
+#### My personal portfolio site built with Astro, UnoCSS & Typescript. 🔥
