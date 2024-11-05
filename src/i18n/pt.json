@@ -8,6 +8,8 @@
 	"site.soonStayConnected": "Em breve, fique conectado",
 	"presentation.title": "Olá, Eu sou o Miguel",
 	"presentation.description": "Sou um desenvolvedor brasileiro de React Native e contribuidor OSS com mais de 7 anos de experiência. Atualmente trabalho com React Native e Typescript. Também sou apaixonado por código aberto e Bitcoin ₿.",
+	"experience.rn.period": "2024 - Presente",
+	"experience.rn.description": "Como membro da Equipa de Triagem, sou responsável pela triagem, etiquetagem e reprodução de problemas.",
 	"experience.totvs.description": "Como desenvolvedor de aplicativos móveis na TOTVS, fui responsável por desenvolver e executar melhorias no processo de reconhecimento facial, além de aprimorar o desempenho do aplicativo e mantê-lo atualizado com as versões mais recentes do React Native.",
 	"experience.totvs.period": "2022 - Presente",
 	"experience.fk.description": "Como desenvolvedor de software no FK Grupo, fui responsável por arquitetar e desenvolver aplicativos móveis offline-first com React Native, Redux e Redux Saga. Também fui responsável pelo desenvolvimento e manutenção de microsserviços em Node JS com TDD, usando o gateway Kong.",

@@ -6,6 +6,7 @@ import { Image } from 'astro:assets'
 import FKLogo from '@assets/images/fk.png'
 import OGLogo from '@assets/images/og.png'
 import TOTVSLogo from '@assets/images/totvs.png'
+import RNLogo from '@assets/images/rn.png'
 
 interface ImageMetadata {
 	src: string
@@ -23,6 +24,13 @@ type Exprience = {
 }
 
 const experiences = [
+  {
+		company: 'React Native (OSS)',
+		position: 'Issue Triaging Squad Member',
+		period: t('experience.rn.period'),
+		description: t('experience.rn.description'),
+		logo: RNLogo,
+	},
 	{
 		company: 'TOTVS',
 		position: 'Mobile Developer',
